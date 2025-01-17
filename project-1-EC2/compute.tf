@@ -15,6 +15,9 @@ resource "aws_instance" "web" {
   })
   lifecycle {
     create_before_destroy = true
+    ignore_changes = [ tags ] // we use this to prevent Terraform undoing some changes that where done externally
+                              // for example somebody in counsole or some outomation changed the tage name and we 
+                              // don't want that changes happen after that we use terraform apply in our terraform configeration  
   }
 }
 
