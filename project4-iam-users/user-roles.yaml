@@ -1,0 +1,12 @@
+#users{      ===> users is a list of objects
+#username : string
+#roles : (readonly, developer, admin, auditor)[]
+#}[]
+
+users:
+  - username: john
+    roles: [readonly, developer]
+  - username: jane
+    roles: [admin, auditor]
+  - username: laura
+    roles: [readonly]  # Fixed typo from "readonlr"
