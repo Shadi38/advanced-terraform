@@ -9,4 +9,4 @@ users:
   - username: jane
     roles: [admin, auditor]
   - username: laura
-    roles: [readonly]  # Fixed typo from "readonlr"
+    roles: [readonly]  
