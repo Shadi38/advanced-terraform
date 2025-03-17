@@ -1,3 +1,6 @@
+//for invoking the lumbda function in terminal without using apigateway, we should do below command:
+//aws lambda invoke --region eu-west-2 --function-name hello response.json
+//cat response.json
 resource "aws_iam_role" "hello_lambda_exec" {
   name = "hello-lambda"
 
@@ -19,6 +22,9 @@ POLICY
 
 resource "aws_iam_role_policy_attachment" "hello_lambda_policy" {
   role       = aws_iam_role.hello_lambda_exec.name
+  //The AWSLambdaBasicExecutionRole policy grants basic execution permissions for AWS Lambda, including:
+  //Writing logs to Amazon CloudWatch.
+  //Basic monitoring permissions.
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
